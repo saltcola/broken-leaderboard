@@ -1,0 +1,55 @@
+<head>
+  <title>Leaderboard</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div class="outer">
+    {{> loginButtons}}
+    <div class="logo"></div>
+    <h1 class="title">Leaderboard</h1>
+    <div class="subtitle">Select a scientist to change their score or remove them from play</div>
+
+    {{> leaderboard}}
+  </div>
+</body>
+
+<template name="leaderboard">
+  <ol class="leaderboard">
+    {{#each players}}
+      {{> player}}
+    {{/each}}
+    {{> addPlayer}}
+  </ol>
+
+  {{#if selectedName}}
+    <div class="details">
+      <div class="name">{{selectedName}}</div>
+      <button class="delete">Delete</button>
+      <button class="inc">+5 points</button>
+      <button class="dec">-5 points</button>
+    </div>
+  {{else}}
+    <div class="message">Click a player to select</div>
+  {{/if}}
+</template>
+
+<template name="player">
+  <li class="player {{selected}}">
+    <span class="name">{{name}}</span>
+    <span class="score">{{score}}</span>
+  </li>
+</template>
+
+<template name="addPlayer">
+  <li>
+    <span class="player">
+      <input type="text" class="name" placeholder="Add new player" id="inputPlayerName">
+    </span>
+    <span class="score">
+      <button class="details delete" id="addPlayer">Add</button>
+    </span>
+  </li>
+</template>
+
