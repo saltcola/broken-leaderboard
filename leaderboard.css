@@ -118,7 +118,7 @@ body {
   vertical-align: middle;
 }
 
-.details .inc, .dec, .delete {
+.details .inc, .dec, .delete, .addPlayer {
   border-radius: 3em;
   border: blue 1px solid;
   background: transparent;
@@ -133,17 +133,18 @@ body {
   padding: 10px 10px;
   transition: all 200ms ease-in;
 }
-.dec, .delete {
+.dec, .delete, .addPlayer{
   border: #eb5f3a 1px solid;
   color: #eb5f3a;
 }
+
 
 .inc:hover {
   background: blue;
   color: #fff;
 }
 
-.dec:hover, .delete:hover {
+.dec:hover, .delete:hover, .addPlayer:hover {
   background: #eb5f3a;
   color: #fff;
 }

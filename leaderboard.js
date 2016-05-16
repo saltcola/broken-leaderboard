@@ -26,10 +26,15 @@ if (Meteor.isClient) {
     },
     'click #addPlayer': function(event, template) {
       var input = template.find("#inputPlayerName").value;
-      Players.insert({
-          name: input,
-          score: 0
-        });
+      if (input == ""){
+        alert("Name is empty")
+      }else{
+        Players.insert({
+            name: input,
+            score: 0
+          });
+      }
+        
 
       template.find("#inputPlayerName").value="";
     }
